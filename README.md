@@ -20,9 +20,9 @@ cosmocloud-deploy/
 │   ├── backend-service.yaml
 │   ├── frontend-service.yaml
 │   ├── redis-service.yaml
-│   ├── ingress.yaml      # Optional ingress
+│   ├── ingress.yaml    
 │   └── serviceaccount.yaml
-└── README.md            # Project documentation
+└── README.md          
 
 ## Chart Structure
 - `Chart.yaml`: Contains metadata about the chart (name, version, description, etc.).
@@ -47,10 +47,27 @@ git clone https://github.com/GarimaSaini2/cosmocloud-deploy.git
 cd cosmocloud-deploy
 
 ## Install the Chart: Deploy the application using Helm:
+Set Up Your Environment:
 
+Ensure that a Kubernetes cluster is running. This can be achieved using tools like Minikube (for local testing) or a cloud provider like AWS, GCP, or Azure.
+Install and configure the following tools:
+kubectl: To manage the Kubernetes cluster.
+Helm: To deploy and manage the Cosmocloud Helm chart.
+Clone the Repository:
+
+Start by cloning the repository containing the Cosmocloud Helm chart to your local system:
+git clone https://github.com/GarimaSaini2/cosmocloud-deploy.git
+cd cosmocloud-deploy
+Deploy the Helm Chart:
+
+Use the following Helm command to install the Cosmocloud stack:
 1. Install the Helm chart:
-   ```bash
 helm install cosmocloud ./cosmocloud-deploy --atomic --timeout 60s
+Explanation:
+cosmocloud: The name of the Helm release.
+./cosmocloud-deploy: The path to the Helm chart directory.
+--atomic: Ensures the deployment is rolled back automatically if any step fails.
+--timeout 60s: Sets a 60-second timeout for the deployment.
 
 2.Verify the deployment:
    Check Pods: kubectl get pods
