@@ -29,11 +29,12 @@ Provide instructions for deploying the Helm chart and testing it.
    helm install cosmocloud-deploy ./cosmocloud-deploy --atomic --timeout 30s
 2.Verify the deployment:
 
-   Check Pods: kubectl get pods
-   Check Services: kubectl get services
+   Check Pods: 
+     kubectl get pods
+   Check Services: 
+     kubectl get services
 3.Access the frontend service:
-
-   If using Minikube: minikube service frontend-svc
+               If using Minikube: minikube service frontend-svc
 ## Common Issues
 Issue: Pods are stuck in CrashLoopBackOff
 Check the pod logs:
